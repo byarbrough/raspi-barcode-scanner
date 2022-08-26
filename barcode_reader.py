@@ -22,10 +22,16 @@ def draw_barcode(decoded, image):
     # for i in range(n_points):
     #     image = cv2.line(image, decoded.polygon[i], decoded.polygon[(i+1) % n_points], color=(0, 255, 0), thickness=5)
     # uncomment above and comment below if you want to draw a polygon and not a rectangle
-    image = cv2.rectangle(image, (decoded.rect.left, decoded.rect.top), 
-                            (decoded.rect.left + decoded.rect.width, decoded.rect.top + decoded.rect.height),
-                            color=(0, 255, 0),
-                            thickness=5)
+    image = cv2.rectangle(
+        image,
+        (decoded.rect.left, decoded.rect.top),
+        (
+            decoded.rect.left + decoded.rect.width,
+            decoded.rect.top + decoded.rect.height,
+        ),
+        color=(0, 255, 0),
+        thickness=5,
+    )
     return image
 
 
